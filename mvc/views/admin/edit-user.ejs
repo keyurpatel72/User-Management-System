@@ -1,0 +1,19 @@
+<% include('../layouts/header.ejs')%>
+    <h1> Edit user </h1>
+
+
+    <form action="/admin/edit-user/<%=user._id %>" method="post"  required><br><br>       
+        <input type="text" name="name"value="<%= user.name %>" required><br><br>
+        <input type="text" name="email" value="<%= user.email%>" required><br><br>
+        <input type="text" name="mobile" value="<%= user.mobile %>" required><br><br>  
+        <input type="radio" name="verified" value="1" <% if(user.is_verifid == 1){%>checked <% } %>>
+        <label>verified</label><br>
+        <input type="radio" name="unverified" value="0" <% if(user.is_verifid ==0) { %> checked <% } %> >
+        <label>unverified</label><br>
+        <input type="hidden" name="id" value="user._id" >
+        <input type="submit" value="Update user"><br><br>
+    </form>
+    <a href="/admin/">Dashboard</a><br><br>
+    
+    <a href="/admin/dashboard" style="text-align: start;">Go To Back</a>
+<% include('../layouts/footer.ejs')%>

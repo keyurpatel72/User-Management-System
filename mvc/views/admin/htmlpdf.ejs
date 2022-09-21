@@ -1,0 +1,32 @@
+
+
+    <h1 style="text-align: center;">User List</h1>
+
+
+    
+    <table width="100%" style="text-align: center;border-style: ridge;" >
+        <tr style="border-style: groove">
+            <th style="border-style: groove;">Name</th>
+            <th style="border-style: groove">email</th>
+            <th style="border-style: groove">Mobile</th>
+            <th style="border-style: groove">Image</th>
+            <th style="border-style: groove">verified</th>
+        </tr>
+        
+
+    <% users.forEach(function(user){ %>
+
+        <tr>
+            <td><%= user.name %></td>
+            <td><%= user.email %></td>
+            <td><%= user.mobile %></td>
+            <td><img src="http://localhost:5000/public/userImage/<%= user.img %>"style='width: 35px;'></td>
+            <td><%= user.is_verified %></td>
+            
+        </tr>
+            <% }); %>
+    </table>
+
+
+
+

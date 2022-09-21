@@ -1,0 +1,51 @@
+<% include('../layouts/header.ejs')%>
+    <h1 style="text-align: center;" >Dashboard</h1>
+  
+   
+    <div style="text-align:center">    
+        <a href="/admin/new-user">Add New User</a>  
+    </div>
+    <div style="text-align:left;margin-left: 150px">    
+        <a href="/admin/export-user" >Export User Into Excel</a> 
+    </div>
+    <div style="text-align:right;margin-right: 150px">    
+        <a href="/admin/export-user-pdf">Export Users Into PDF</a>
+    </div>
+    
+    <form style="text-align: center;">
+        <input type="text" placeholder="Search" name="search">
+        <input type="submit" value="search">
+    </form>
+    
+    <table width="100%" style="text-align: center;border-style: ridge;" >
+        <tr style="border-style: groove">
+            <th style="border-style: groove;">Name</th>
+            <th style="border-style: groove">email</th>
+            <th style="border-style: groove">Mobile</th>
+            <th style="border-style: groove">Image</th>
+            <th style="border-style: groove">verified</th>
+            <th style="border-style: groove">Edit User</th>
+        </tr>
+        
+
+    <% users.forEach(function(user){ %>
+
+        <tr>
+            <td><%= user.name %></td>
+            <td><%= user.email %></td>
+            <td><%= user.mobile %></td>
+            <td><img src="/public/userImage/<%= user.img %>"style='width: 35px;'></td>
+            <td><%= user.is_verified %></td>
+            <td><a href="/admin/edit-user/<%= user._id%>">Edit User</a></td>
+            
+        </tr>
+            <% }); %>
+    </table><br>
+
+
+    <% for(var j =1;j <= totalpages;j++){%>
+         <a href="?page=<%=j %>"><%= j %></a>
+    <%}%><br>
+    <a href="/admin/dashboard" style="text-align: start;">Go To Back</a>
+
+<% include('../layouts/footer.ejs')%>

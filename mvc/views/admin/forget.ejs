@@ -1,0 +1,10 @@
+<% include('../layouts/header.ejs')%>
+    <h1>Admin forget password </h1>
+
+
+    <form action="admin/forget" method="post"  required><br><br>       
+        <input type="text" name="email" placeholder="enter your email" required><br><br>
+        <input type="submit" value="Login"><br><br>
+    </form>
+    <a href="/admin/dashboard" style="text-align: start;">Go To Back</a>
+<% include('../layouts/footer.ejs')%>

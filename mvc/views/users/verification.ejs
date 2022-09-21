@@ -1,0 +1,15 @@
+<% include('../layouts/header') %>
+
+<%if(typeof message !== 'undefined'){ %>
+
+    <p style="color:burlywood"><%= message  %></p>
+    <%
+    } 
+    %> 
+<form action="/forget" method="post"  ><br><br>       
+    <input type="email" name="email" placeholder="enter your email" required><br><br>
+    <input type="submit" value="send verification link"><br><br>
+</form>
+
+
+<%include('../layouts/footer')%>
